@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import  Home  from '@Pages/Home';
 import { Navbar } from '@Components/index';
-import { useStore } from '@Backend/hooks/useStore';
+import CustomerPage from '@Pages/Customer';
 
 
 function App() {
-	const  state  = useStore();
-	console.log('state at App', state);
+	
 
 	return (
 		<BrowserRouter>
 			<Navbar />
 			<Routes>
 				<Route index element={<Home />} />
+				<Route path='Customer' element={<CustomerPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

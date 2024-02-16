@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Links: React.FC= () => {
 	const links = [
-		{ name: 'Home', path: '/' },
+		{ name: 'Customer', path: '/' },
 		{ name: 'Menu', path: '/Menu' },
 		{ name: 'About', path: '/About' },
 		{ name: 'Contact', path: '/Contact' },

@@ -7,12 +7,12 @@ import { IconContext } from 'react-icons'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Provider  >
-      <IconContext.Provider
-        value={{ className: 'w-6 h-6 text-gray-500 dark:text-gray-400' }}>
-        <App />
-      </IconContext.Provider>
-    </Provider >
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <Provider  >
+    <IconContext.Provider
+      value={{ className: 'w-6 h-6 text-gray-500 dark:text-gray-400' }}>
+      <App />
+    </IconContext.Provider>
+  </Provider >
+  // </React.StrictMode>,
 )

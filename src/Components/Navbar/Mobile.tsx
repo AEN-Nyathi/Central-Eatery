@@ -7,13 +7,12 @@ export default function Mobile() {
 
 	return (
 		<nav className="grid grid-cols-4 justify-items-center content-center place-items-center md:hidden ">
-			{/* <button className="" onClick={() => setIsOpen(!isOpen)}>c</button> */}
+			
 			<FiMenu onClick={() => dispatch({
 				data: !isMenuOpen,
 				type: "isMenuOpen"
 			})} />
-			<h1 className="col-span-2 my-0 py-1">template</h1>
-			{/* <FiMenu onClick={() => OpenMenu(dispatch, !isMenuOpen)} /> */}
+			<h1 className="col-span-2 my-0 py-1 text-2xl">Rise and shine</h1>
 			<Profile />
 			{isMenuOpen ? <Links  /> : null}
 		</nav>

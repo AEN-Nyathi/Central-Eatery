@@ -2,10 +2,10 @@ import React from 'react';
 import Desktop from './Desktop';
 import Mobile from './Mobile';
 
-const Navbar:React.FunctionComponent = ()=> {
-	
+const Navbar: React.FunctionComponent = () => {
+
 	return (
-		<header className="bg-light dark:bg-dark w-screen">
+		<header className="bg-blue-50 dark:bg-blue-950 w-screen">
 			<Desktop />
 			<Mobile />
 		</header>

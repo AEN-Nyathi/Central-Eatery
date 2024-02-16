@@ -19,7 +19,7 @@
 	}
 
 	* {
-		@apply m-0 p-0 box-border items-center;
+		@apply m-0 p-0 box-border items-center text-base;
 	}
 
 	root,
@@ -29,17 +29,17 @@
 	}
 
 	body {
-		@apply bg-cover bg-center bg-fixed bg-blue-950 text-dark dark:text-light selection:text-light selection:dark:text-dark   selection:bg-primary;
+		@apply bg-cover bg-center bg-fixed bg-light dark:bg-dark text-dark dark:text-light selection:text-light selection:dark:text-dark   selection:bg-primary;
 	}
 	main {
-		@apply grow overflow-y-auto overflow-x-hidden w-screen;
+		@apply grow overflow-y-auto overflow-x-hidden p-2 w-screen;
 	}
 
 	section {
-		@apply p-2 md:p-8 my-4;
+		@apply md:p-8 mb-4;
 	}
 	article {
-		@apply p-4 mb-8  my-4;
+		@apply p-2 md:p-6  bg-blue-500/25  rounded-2xl cursor-pointer;
 	}
 	nav {
 		@apply grid gap-2 place-content-start place-items-center;
@@ -52,7 +52,7 @@
 	h5,
 	h6 {
 		@apply inline-flex justify-center items-center text-center text-ellipsis;
-		@apply font-black w-full gap-2 capitalize  py-2 my-2;
+		@apply font-black  gap-2 capitalize w-full basis-full;
 	}
 
 	h1 {
@@ -74,7 +74,7 @@
 		@apply text-lg md:text-4xl;
 	}
 	label {
-		@apply text-lg md:text-4xl font-black m-2;
+		@apply text-lg md:text-4xl inline-flex gap-2 font-black mt-2;
 	}
 
 	text,
@@ -88,8 +88,8 @@
 	input {
 		@apply cursor-pointer;
 		@apply transition-all duration-100 ease-in-out;
-		@apply py-2 px-4 my-2 gap-2 rounded-lg;
-		@apply inline-flex justify-center items-center text-center;
+		@apply py-2 px-4 mb-2 gap-2 rounded-lg;
+		@apply inline-flex;
 	}
 
 	a {
@@ -107,7 +107,7 @@
 	}
 
 	img {
-		@apply max-h-screen max-w-full;
+		@apply max-h-screen max-w-full size-full;
 	}
 
 	table {
