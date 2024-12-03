@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-   darkMode : 'media',
+  darkMode: 'media',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,9 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        light: '#F0F8FF',
-        dark: '#111111',
-        primary: 'rgb(var(--color-primary) / var(--color-transparency))',
+        light: '#F5F5FA',
+        dark: '#010B13',
+        credit: "#FF0000",
+        debit: '#0000FF',
+        primary: "#ef4444",
+        secodary: "#56B04A"
       },
     },
   },

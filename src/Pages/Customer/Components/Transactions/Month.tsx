@@ -31,8 +31,8 @@ const Month: React.FC<MonthProps> = ({ year, month, transactions }) => {
                 ))}
             </ul>
             <ul className="flex sticky -bottom-2 gap-2 justify-evenly py-2 bg-light dark:bg-dark">
-                <li className="text-red-500">Credit: R{creditAmount.toFixed(2)}</li>
-                <li className="text-blue-500">Debit: R{debitAmount.toFixed(2)}</li>
+                <li className="text-credit">Credit: R{creditAmount.toFixed(2)}</li>
+                <li className="text-debit">Debit: R{debitAmount.toFixed(2)}</li>
                 <li>Balance: R{balance.toFixed(2)}</li>
             </ul>
         </li>

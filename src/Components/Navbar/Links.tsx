@@ -1,29 +1,34 @@
-
-import { useStore } from '@Backend/hooks/useStore';
+import { useStaticData } from '@Backend/hooks/useStore';
 import { Link } from 'react-router-dom';
 
-const Links: React.FC= () => {
+const Links: React.FC = () => {
 	const links = [
-		{ name: 'Customer', path: '/' },
+		{ name: 'Home', path: '/' },
+		{ name: 'Stock', path: '/Stock' },
 		{ name: 'Menu', path: '/Menu' },
-		{ name: 'About', path: '/About' },
 		{ name: 'Contact', path: '/Contact' },
 	];
-	const { dispatch } = useStore();
+	const { dispatch } = useStaticData();
 
 	return (
-		<ul className="flex flex-col col-span-2 md:flex-row gap-4 h-svh md:h-auto">
+		<ul className='flex flex-col col-span-4 w-full md:flex-row gap-2 h-svh md:h-auto md:justify-center '>
 			{links.map((link) => (
 				<li key={link.name}>
-					<Link className='text-xl md:text-base' to={link.path} onClick={() => dispatch({
-						data: false,
-						type:"isMenuOpen"})}>
+					<Link
+						className='text-xl flex justify-center w-20 bg-red-500 text-white text-start  md:text-base'
+						to={link.path}
+						onClick={() =>
+							dispatch({
+								data: false,
+								type: 'isMenuOpen',
+							})
+						}>
 						{link.name}
 					</Link>
 				</li>
 			))}
 		</ul>
 	);
-}
+};
 
 export default Links;

@@ -1,37 +1,38 @@
 import React from 'react';
-import AppState from './AppState';
-export { };
-declare global {
-	type ThemeTypes = {
-		Color: string;
-		Transparency: number;
-		Mode: 'light' | 'dark';
-		HexColor: string;
-	};
 
-	type LoadingType = {
-		state: boolean;
-		message: string;
-		progress: string;
-	};
-	type productType = {
-		ID: string,
+import DynamicState from './Dynamic/Hooks/DynamicState';
+import StaticState from './Static/Hooks/StaticState';
+export { };
+
+declare global {
+	type ProductType = {
 		Name: string,
-		price: number,
-		image: string
-	};
-	type TransactionType = {
-		ID: string,
-		Product?: string,
-		Date: Date,
-		price: number,
-		type: "Credit" | "Debit",
-		image?: string
+		Discription: string[]
+		Price: number,
+		Image?: string
 	}
+	type CreditType = {
+		ID: string,
+		Product: string,
+		Date: number,
+		price: number,
+		type: "Credit",
+		image: string
+	}
+
+	type DebitType = {
+		ID: string,
+		Date: number,
+		price: number,
+		type: "Debit",
+	}
+	type TransactionType = CreditType | DebitType;
+
 	type CustomerType = {
 		Name: string,
 		ID: string,
 		phone: string;
+		image?: string,
 		transactions: TransactionType[]
 	}
 
@@ -40,22 +41,24 @@ declare global {
 		message: string;
 	};
 
-
-
-
-
-	type StoreType = AppState & {
+	type DynamicStateType = DynamicState & {
+		dispatch: React.Dispatch<ActionTypes>;
+	};
+	type StaticStateType = StaticState & {
 		dispatch: React.Dispatch<ActionTypes>;
 	};
 
-	type ActionTypes =
-		| { type: 'INITIALIZE'; data: AppState }
-		| { type: keyof AppState; data: AppState[keyof AppState] }
-		| {
-			type: "ADD_TRANSACTION"; data: {
-				customerId: string;
-				transaction: TransactionType;
-			}
-		}
+	type DynamicActionTypes =
+		{ type: keyof DynamicState; data: DynamicState[keyof DynamicState] }
+		| { type: "ADD_TRANSACTION"; data: { customerId: string; transaction: TransactionType } }
+		| { type: "FETCH_STATE_START"; collection: string }
+		| { type: "FETCH_STATE_SUCCESS"; data: { Customers: CustomerType[] } }
+		| { type: "FETCH_STATE_FAILURE"; data: { error: string } }
+		| { type: "Add_Order"; data: { Products: ProductType } };
+
+	type StaticActionTypes =
+		{ type: keyof StaticState; data: StaticState[keyof StaticState] } | { type: "Add_Order"; data: { Products: ProductType } };
+
+
 
 }

@@ -34,6 +34,6 @@
 			// Add more aliases as needed
 		}
   },
-  "include": ["src"],
+  "include": ["src", "src/Context/Static/Hooks/StaticState.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

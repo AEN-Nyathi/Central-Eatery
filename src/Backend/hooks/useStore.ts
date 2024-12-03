@@ -1,4 +1,6 @@
-import { Context } from '@Context/index';
+import { DynamicContext } from '@Context/Dynamic';
+import { StaitcContext } from '@Context/Static';
 import { useContext } from 'react';
 
-export const useStore = () => useContext<StoreType | undefined>(Context) as StoreType ;
+export const useStaticData = () => useContext<StaticStateType | undefined>(StaitcContext) as StaticStateType;
+export const useDynamicData = () => useContext<DynamicStateType | undefined>(DynamicContext) as DynamicStateType;

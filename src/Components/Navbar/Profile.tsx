@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 // import profile from '../../assets/Profile.png';
 import { useState } from 'react';
 import { FiSettings } from 'react-icons/fi';
-import { useStore } from '@Backend/hooks/useStore';
+import { useStaticData } from "@Backend/hooks/useStore";
 import { MdOutlineLightMode, MdOutlineModeNight } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 export default function Profile() {
-	const { isMenuOpen } = useStore();
+	const { isMenuOpen } = useStaticData();
 	const links = [{
 		Name: 'Your Profile',
 		link: 'Profile',

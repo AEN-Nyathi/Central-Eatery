@@ -1,54 +1,40 @@
-import { useStore } from "@Backend/hooks/useStore";
-import Customer from "@Components/User/Customer";
-import { BiSearch } from "react-icons/bi";
-import CurrencyFormatter from 'react-currency-formatter';
+import Logo from '@Images/Logo.jpg';
+import Kota from '@Images/Menus/Kota.png';
+export default function Homepage() {
+	return (
+		<main>
+			<section>
+				<h1>Central Eatery</h1>
+				<img
+					title='Logo'
+					className='w-96 m-4 rounded-full h-96 mx-auto'
+					src={Logo}
+				/>
+				<h2>Every Bite Is a Delight</h2>
+				<button className='my-4'>View Menu</button>
+			</section>
+			<section className=''>
+				<h1>Kota Menu</h1>
+				<div className='flex flex-wrap gap-10'>
+					<img
+						title='Logo'
+						className='h-60 object-contain'
+						src={Kota}
+					/>
+					<div>
+						<h4>SMASH</h4>
+						<p>Bread, Chips, Polony, Archaar, Rasaian, Egg and Lettuce</p>
+						<h4>SMASH</h4>
+						<p>Bread, Chips, Polony, Archaar, Rasaian, Egg and Lettuce</p>
+						<h4>SMASH</h4>
+						<p>Bread, Chips, Polony, Archaar, Rasaian, Egg and Lettuce</p>
+					</div>
+				</div>
 
-export default function Home() {
-  const { Customers } = useStore();
-  const { totalCredit, totalDebit } = Customers.reduce(
-    (acc, customer) => {
-      const creditTotal = customer.transactions
-        .filter((transaction) => transaction.type === "Credit")
-        .reduce((creditAcc, transaction) => creditAcc + transaction.price, 0);
-      const debitTotal = customer.transactions
-        .filter((transaction) => transaction.type === "Debit")
-        .reduce((debitAcc, transaction) => debitAcc + transaction.price, 0);
-      return {
-        totalCredit: acc.totalCredit + creditTotal,
-        totalDebit: acc.totalDebit + debitTotal,
-      };
-    },
-    { totalCredit: 0, totalDebit: 0 }
-  );
-
-  // Calculate balance directly
-  const Balance = totalCredit - totalDebit;
-  return (
-    <>
-      <section className="sticky w-screen p-2 m-0 top-0 bg-blue-50 dark:bg-blue-950 " >
-        <ul className="grid grid-cols-2">
-          <li className="text-red-500"><b>Credit:</b> <CurrencyFormatter quantity={totalCredit} currency="ZAR" /></li>
-          <li className="text-blue-500"><b>Debit:</b> <CurrencyFormatter quantity={totalDebit} currency="ZAR" /></li>
-          <li><b>Customers:</b> {Customers.length}</li>
-          <li className={`${Balance > 0 ? 'text-blue-500' : "text-red-500"}`}><b>Balance:</b> <CurrencyFormatter quantity={Balance} currency="ZAR" /></li>
-      
-        </ul>
-        <div className="flex gap-2">
-          <input className="w-full" type="search" placeholder="Customer Name..." />
-          <label htmlFor="Customers"><BiSearch /></label>
-        </div>
-
-      </section>
-      <main>
-       
-        <section>
-          <ul>
-            {Customers.map((customer) => <li className="my-8">
-              <Customer customer={customer} />
-            </li>)}
-          </ul>
-        </section>
-      </main>
-    </ >
-  )
+				{/* Display featured dishes with images and descriptions */}
+			</section>
+			<section className='testimonials'>{/* Display customer testimonials or reviews */}</section>
+			<section className='contact-info'>{/* Display contact information */}</section>
+		</main>
+	);
 }

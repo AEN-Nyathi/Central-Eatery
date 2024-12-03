@@ -10,6 +10,42 @@
 	#root {
 		@apply w-screen p-0 m-0 h-screen overflow-hidden relative flex flex-col;
 	}
+
+	.battambang-thin {
+		font-family: 'Battambang', system-ui;
+		font-weight: 100;
+		font-style: normal;
+	}
+
+	.battambang-light {
+		font-family: 'Battambang', system-ui;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	.battambang-regular {
+		font-family: 'Battambang', system-ui;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.battambang-bold {
+		font-family: 'Battambang', system-ui;
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	.battambang-black {
+		font-family: 'Battambang', system-ui;
+		font-weight: 900;
+		font-style: normal;
+	}
+
+	.allerta-stencil-regular {
+		font-family: 'Allerta Stencil', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
 }
 
 @layer base {
@@ -29,17 +65,17 @@
 	}
 
 	body {
-		@apply bg-cover bg-center bg-fixed bg-light dark:bg-dark text-dark dark:text-light selection:text-light selection:dark:text-dark   selection:bg-primary;
+		@apply bg-cover bg-center bg-fixed bg-[url(./assets/BackGround.png)] bg-light dark:bg-dark text-dark dark:text-light selection:text-light selection:dark:text-dark   selection:bg-primary;
 	}
 	main {
-		@apply grow overflow-y-auto overflow-x-hidden p-2 w-screen;
+		@apply grow overflow-y-auto overflow-x-hidden w-screen;
 	}
 
 	section {
-		@apply md:p-8 mb-4;
+		@apply p-2;
 	}
 	article {
-		@apply p-2 md:p-6  bg-blue-500/25  rounded-2xl cursor-pointer;
+		@apply p-2 md:p-6 rounded-2xl;
 	}
 	nav {
 		@apply grid gap-2 place-content-start place-items-center;
@@ -48,62 +84,66 @@
 	h1,
 	h2,
 	h3,
-	h4,
 	h5,
 	h6 {
-		@apply inline-flex justify-center items-center text-center text-ellipsis;
-		@apply font-black  gap-2 capitalize w-full basis-full;
+		@apply inline-flex justify-center  text-ellipsis allerta-stencil-regular;
+		@apply gap-2 capitalize w-full basis-full;
 	}
 
 	h1 {
-		@apply text-5xl md:text-9xl;
+		@apply text-5xl md:text-7xl  text-center;
 	}
 	h2 {
-		@apply text-4xl md:text-8xl;
+		@apply text-4xl md:text-5xl  text-center;
 	}
 	h3 {
-		@apply text-3xl md:text-7xl;
+		@apply text-3xl md:text-2xl  text-center;
 	}
 	h4 {
-		@apply text-2xl md:text-6xl;
+		@apply bg-red-500 p-2  text-center uppercase font-bold rounded-md text-base md:text-lg allerta-stencil-regular;
 	}
 	h5 {
-		@apply text-xl md:text-5xl;
+		@apply text-sm font-bold md:text-base bg-red-500 rounded-md allerta-stencil-regular;
 	}
 	h6 {
-		@apply text-lg md:text-4xl;
+		@apply text-base justify-start md:text-lg battambang-thin;
 	}
 	label {
-		@apply text-lg md:text-4xl inline-flex gap-2 font-black mt-2;
+		@apply inline-flex gap-2 font-black mt-2 battambang-bold;
 	}
 
 	text,
 	p {
-		@apply text-base md:text-3xl  break-words my-2;
+		@apply text-base break-words battambang-regular;
 	}
-
+	li {
+		@apply text-base break-words battambang-regular;
+	}
 	a,
 	button,
 	select,
 	input {
 		@apply cursor-pointer;
 		@apply transition-all duration-100 ease-in-out;
-		@apply py-2 px-4 mb-2 gap-2 rounded-lg;
-		@apply inline-flex;
+		@apply py-1 px-4 mb-2 gap-2 rounded-lg allerta-stencil-regular;
+		@apply inline-flex justify-between text-center;
 	}
 
 	a {
-		@apply text-blue-500 hover:bg-blue-300  active:bg-primary;
+		@apply text-red-500 hover:bg-blue-300  active:bg-primary;
 		@apply font-medium rounded-lg text-sm;
 	}
 
 	button {
-		@apply focus:ring-4 focus:outline-none focus:ring-primary/100 border border-dark dark:border-light;
+		@apply focus:ring-4 focus:outline-none text-base focus:ring-primary border-2 border-primary;
 	}
 
 	select,
 	input {
 		@apply block bg-transparent border-0 border-b-2 border-dark  dark:border-light focus:outline-none focus:ring-0 focus:border-light;
+	}
+	option {
+		@apply bg-black text-light;
 	}
 
 	img {
