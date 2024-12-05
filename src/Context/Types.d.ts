@@ -7,7 +7,7 @@ export { };
 declare global {
 	type ProductType = {
 		Name: string,
-		Discription: string[]
+		Description: string[]
 		Price: number,
 		Image?: string
 	}
@@ -45,7 +45,7 @@ declare global {
 		dispatch: React.Dispatch<ActionTypes>;
 	};
 	type StaticStateType = StaticState & {
-		dispatch: React.Dispatch<ActionTypes>;
+		dispatch: React.Dispatch<StaticActionTypes>;
 	};
 
 	type DynamicActionTypes =
@@ -54,11 +54,16 @@ declare global {
 		| { type: "FETCH_STATE_START"; collection: string }
 		| { type: "FETCH_STATE_SUCCESS"; data: { Customers: CustomerType[] } }
 		| { type: "FETCH_STATE_FAILURE"; data: { error: string } }
-		| { type: "Add_Order"; data: { Products: ProductType } };
+		| { type: "Add_Order"; data: { Products: ProductType } }
+		| { type: "Remove_Order"; data: { Products: ProductType } };
 
 	type StaticActionTypes =
-		{ type: keyof StaticState; data: StaticState[keyof StaticState] } | { type: "Add_Order"; data: { Products: ProductType } };
-
-
-
+		{ type: keyof StaticState; data: StaticState[keyof StaticState] } | { type: "Add_Order"; data: { Products: ProductType } } | { type: "Remove_Order"; data: { Products: ProductType } } | {
+			type: 'isLoading',
+			data: {
+				state: string | boolean,
+				message: string,
+				progress: progress,
+			}
+		}
 }

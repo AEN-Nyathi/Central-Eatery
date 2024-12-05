@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 const Links: React.FC = () => {
 	const links = [
 		{ name: 'Home', path: '/' },
-		{ name: 'Stock', path: '/Stock' },
-		{ name: 'Menu', path: '/Menu' },
-		{ name: 'Contact', path: '/Contact' },
 	];
 	const { dispatch } = useStaticData();
 

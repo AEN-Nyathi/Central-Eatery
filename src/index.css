@@ -65,7 +65,7 @@
 	}
 
 	body {
-		@apply bg-cover bg-center bg-fixed bg-[url(./assets/BackGround.png)] bg-light dark:bg-dark text-dark dark:text-light selection:text-light selection:dark:text-dark   selection:bg-primary;
+		@apply bg-cover bg-center bg-fixed bg-[url(./assets/BackGround.png)] bg-dark text-light  selection:bg-primary;
 	}
 	main {
 		@apply grow overflow-y-auto overflow-x-hidden w-screen;

@@ -1,7 +1,7 @@
 {
-  "name": "vite-project",
+  "name": "central-eatery",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "start": "vite --open",
@@ -15,6 +15,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "link:dataconnect-generated\\js\\default-connector",
     "firebase": "^10.7.1",
     "react": "^18.2.0",
     "react-currency-formatter": "^1.1.0",

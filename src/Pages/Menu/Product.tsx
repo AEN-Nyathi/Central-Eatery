@@ -18,10 +18,10 @@ export default function Product({ Product }: { Product: ProductType }) {
 				<ul className='w-full'>
 					<li className='md:max-w-96 mb-2  mx-0'>
 						<p>
-							{Product.Discription.map((text, index) =>
-								index + 2 == Product.Discription.length
+							{Product.Description.map((text, index) =>
+								index + 2 == Product.Description.length
 									? `${text} and `
-									: index + 1 == Product.Discription.length
+									: index + 1 == Product.Description.length
 									? `${text}.`
 									: `${text}, `
 							)}

@@ -21,7 +21,7 @@ const itemGroups: ItemGroup[] = [
       { id: 'chicken_wings', name: 'Chicken Wings', category: 'Meats', Size: "5kg" },
       { id: 'hake', name: 'Hake', category: 'Meats', Size: "4kg" },
       { id: 'russian', name: 'Russian', category: 'Meats', Size: "1kg" },
-      { id: 'polony', name: 'Polony', category: 'Meats', Size: "1kg" },
+      { id: 'Palony', name: 'Palony', category: 'Meats', Size: "1kg" },
       { id: 'wors', name: 'Wors', category: 'Meats', Size: "1kg" },
 
       // Vagetable and Fruits

@@ -3,11 +3,8 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Order() {
-	const { Order } = useStaticData();
-	console.log(Order);
-	// const products = Products.flatMap((category) => category.Products).filter((product) => {
-	// 	return Order.map((order) => product.Name.includes(order));
-	// });
+	const { Order, dispatch } = useStaticData();
+
 	const Navigate = useNavigate();
 	useEffect(() => {
 		if (Order.length < 1) Navigate('/Menu');
@@ -34,10 +31,10 @@ export default function Order() {
 							<ul className='w-full'>
 								<li className='md:max-w-96 mb-2  mx-0'>
 									<p className='max-w-52'>
-										{product?.Discription?.map((text, index) =>
-											index + 2 == product.Discription.length
+										{product?.Description?.map((text, index) =>
+											index + 2 == product.Description.length
 												? `${text} and `
-												: index + 1 == product.Discription.length
+												: index + 1 == product.Description.length
 												? `${text}.`
 												: `${text}, `
 										)}
@@ -46,7 +43,13 @@ export default function Order() {
 								<li>
 									<p className='text-lg font-bold'>R{product?.Price}</p>
 								</li>
-								<li></li>
+								<li>
+									<button
+										title='remove order'
+										onClick={() => dispatch({ type: 'Add_Order', data: { Products: product } })}>
+										remove
+									</button>{' '}
+								</li>
 							</ul>
 						</div>
 					</article>
@@ -86,9 +89,10 @@ export default function Order() {
 					</button>
 					<button
 						type='button'
-						onClick={() => Navigate('/Menu')}
+						disabled
+						// onClick={() => Navigate('/Menu')}
 						className='mt-2 w-full'>
-						confirm
+						place Order
 					</button>
 				</nav>
 			</section>

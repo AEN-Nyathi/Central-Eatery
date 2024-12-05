@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '@Pages/Home';
+// import Home from '@Pages/Home';
 import { Navbar } from '@Components/index';
-import CustomerPage from '@Pages/Customer';
-import SignIn from '@Pages/Auth/SignIn';
-import SignUp from '@Pages/Auth/SignUp';
-import Stock from '@Pages/Stock';
+// import CustomerPage from '@Pages/Customer';
+// import SignIn from '@Pages/Auth/SignIn';
+// import SignUp from '@Pages/Auth/SignUp';
+// import Stock from '@Pages/Stock';
 import ProductPage from '@Pages/Stock/ProductPage';
 import MenuPage from '@Pages/Menu';
 import Order from '@Pages/Menu/Order';
@@ -19,27 +19,27 @@ function App() {
 				<Route element={<Navbar />}>
 					<Route
 						index
-						element={<Home />}
+						element={<MenuPage />}
 					/>
-					<Route
+					{/* <Route
 						path='Customer'
 						element={<CustomerPage />}
-					/>
+					/> */}
 					<Route
 						path='Menu'
 						element={<MenuPage />}></Route>
 					<Route
 						path='Order'
 						element={<Order />}></Route>
-					<Route
+					{/* <Route
 						path='Stock'
-						element={<Stock />}></Route>
+						element={<Stock />}></Route> */}
 					<Route
 						path='Product'
 						element={<ProductPage />}
 					/>
 				</Route>
-				<Route path='Auth'>
+				{/* <Route path='Auth'>
 					<Route
 						index
 						element={<SignIn />}
@@ -48,7 +48,7 @@ function App() {
 						path='SignUp'
 						element={<SignUp />}
 					/>
-				</Route>
+				</Route> */}
 			</Routes>
 		</BrowserRouter>
 	);

@@ -12,7 +12,7 @@ export default function Mobile() {
 				data: !isMenuOpen,
 				type: "isMenuOpen"
 			})} />
-			<h1 className="col-span-2 my-0 py-1 text-2xl">Rise and shine</h1>
+			<h1 className="col-span-2 my-0 py-1 text-2xl">Central Eatery</h1>
 			<Profile />
 			{isMenuOpen ? <Links /> : null}
 		</nav>

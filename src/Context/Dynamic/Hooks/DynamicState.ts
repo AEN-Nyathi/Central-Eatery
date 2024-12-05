@@ -1,3 +1,6 @@
+type productType = {Name:string,
+    Id:string
+}
 class DynamicState {
     ID: string;
     Name: string;

@@ -1,5 +1,5 @@
 export default async function SIGN_IN(
-	dispatch: React.Dispatch<ActionTypes>,
+	dispatch: React.Dispatch<StaticActionTypes>,
 	data: { Email: string; Password: string }
 ) {
 	try {

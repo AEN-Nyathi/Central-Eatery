@@ -1,6 +1,6 @@
 import { FirebaseError } from 'firebase/app';
 
-function SetError(dispatch: React.Dispatch<ActionTypes>, error: unknown) {
+function SetError(dispatch: React.Dispatch<StaticActionTypes>, error: unknown) {
 	if (error instanceof FirebaseError) {
 		dispatch({
 			type: 'isError',

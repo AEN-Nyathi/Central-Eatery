@@ -39,7 +39,7 @@ export default function Profile() {
 		<div className=" flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
 			<div className="relative mx-3">
-				<button className='border-none'
+				<button title='profile' className='border-none'
 					type="button"
 					onClick={() => setIsOpen(!isOpen)}>
 					<CgProfile />

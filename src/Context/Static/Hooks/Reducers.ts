@@ -16,6 +16,10 @@ const Reducer = (state: StaticState, action: StaticActionTypes): StaticState => 
 			...state,
 			Order: [...state.Order, action.data.Products],
 		}
+		case "Remove_Order": return {
+			...state,
+			Order: state.Order.filter((orders) => orders.Name == action.data.Products.Name),
+		}
 		default:
 			return state;
 	}

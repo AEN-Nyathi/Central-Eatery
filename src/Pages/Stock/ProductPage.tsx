@@ -29,22 +29,10 @@ function ProductPage() {
 
 			<div className=' flex flex-wrap items-center gap-4 p-2 '>
 				<ul className='ml-2 mt-2'>
-					<li>
-						Description: {selectedProduct.brand} {selectedProduct.Name} {selectedProduct.type}
-					</li>
-					<li>brand: {selectedProduct.brand}</li>
 					<li>Name: {selectedProduct.name}</li>
 					<li>Type: {selectedProduct.category}</li>
 					<li>Size: {selectedProduct.Size}</li>
-					<li>Price: {selectedProduct.Price}</li>
-					<li>Units: {selectedProduct.Units}</li>
-					<li>Qty: {selectedProduct.Qty}</li>
 				</ul>
-				<img
-					title='Product'
-					className='h-24 w-24 '
-					src={selectedProduct.image}
-				/>
 			</div>
 		</main>
 	);
